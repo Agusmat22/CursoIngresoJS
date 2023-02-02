@@ -5,21 +5,63 @@ mostrar el resulto por medio de "ALERT"
 ej.: "la Resta es 750"*/ 
 function sumar()
 {	
-	alert("ok");	
+	let numeroUno;
+	let numeroDos;
+	let resultado;
+	
+	numeroUno = parseFloat(document.getElementById("txtIdNumeroUno").value);
+	numeroDos = parseFloat(document.getElementById("txtIdNumeroDos").value);
+
+	resultado = numeroUno + numeroDos ;
+
+	alert (`La sumas es ${resultado}`);
+
 }
 
 function restar()
 {
+	let numeroUno;
+	let numeroDos;
+	let resultado;
+	
+	numeroUno = parseFloat(document.getElementById("txtIdNumeroUno").value);
+	numeroDos = parseFloat(document.getElementById("txtIdNumeroDos").value);
+
+	resultado = numeroUno - numeroDos ;
+
+	alert (`La resta es ${resultado}`);
+
 	
 }
 
 function multiplicar()
 { 
+	let numeroUno;
+	let numeroDos;
+	let resultado;
 	
+	numeroUno = parseFloat(document.getElementById("txtIdNumeroUno").value);
+	numeroDos = parseFloat(document.getElementById("txtIdNumeroDos").value);
+
+	resultado = numeroUno * numeroDos ;
+
+	alert (`La multiplicacion es ${resultado}`);
+
 }
 
 function dividir()
 {
+	let numeroUno;
+	let numeroDos;
+	let resultado;
+	
+	numeroUno = parseFloat(document.getElementById("txtIdNumeroUno").value);
+	numeroDos = parseFloat(document.getElementById("txtIdNumeroDos").value);
+
+	resultado = numeroUno / numeroDos ;
+
+	alert (`La division es ${resultado}`);
+
 	
 }
 
