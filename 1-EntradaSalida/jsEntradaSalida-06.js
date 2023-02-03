@@ -7,14 +7,19 @@ function sumar()
 	let numeroUno;
 	let numeroDos;
 	let resultado;
+	let mensaje;
 
-	numeroUno =parseFloat(document.getElementById("txtIdNumeroUno").value);
-	numeroDos =parseFloat(document.getElementById("txtIdNumeroDos").value);
+	numeroUno =document.getElementById("txtIdNumeroUno").value;
+	numeroDos =document.getElementById("txtIdNumeroDos").value;
+
+	//asi se tiene que declarar el parseInt o parseFloat porque cualquier error que pase lo podemos desglozar sin que se funda todo. Es mejor tener paso por paso a tratar de resumir codigo.
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
 
 	resultado = numeroUno + numeroDos;
 
-	// ${aca va la variable} sirve para seleccionar la variable dentro de la cadena de texto
-	alert(`La suma es ${resultado}`);
+	mensaje = "El resultado es "+ resultado;
 
+	alert(mensaje);
 }
 
