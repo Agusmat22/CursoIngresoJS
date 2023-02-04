@@ -19,6 +19,9 @@ function mostrarAumento()
 	//recuadro para que el usuario ingrese un dato por el descuento
 	descuento = prompt ("Escriba el porcentaje de descuento que desea");
 
+	//transformo el strings a un entero
+	descuento = parseInt(descuento);
+
 	//calculo del importe inicial mas el descuento
 	resultado = importe - (importe*descuento)/100;
 

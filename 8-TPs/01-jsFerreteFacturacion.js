@@ -1,71 +1,101 @@
-/*1.	Para el departamento de facturación:
+//NOMBRE AGUSTIN MATIAS GARCIA NAVAS
+/*1.	Para el departamento de facturación:  
 A.	Ingresar tres precios de productos y mostrar la suma de los mismos.
 B.	Ingresar tres precios de productos y mostrar el promedio de los mismos.
 C.	ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
 */
 function Sumar () 
 {  
-    let precio1;
-    let precio2;
-    let precio3;
-    let sumaTotal;
-    let mensaje;
+   //asigno las variables
+   let precio1;
+   let precio2;
+   let precio3;
+   let resultado;
+   let mensaje;
 
-    precio1 = parseFloat(document.getElementById("txtIdPrecioUno").value);
-    precio2 = parseFloat(document.getElementById("txtIdPrecioDos").value);
-    precio3 = parseFloat(document.getElementById("txtIdPrecioTres").value);
+    //tomamos el dato que ingrese el usuario
+    precio1 = document.getElementById("txtIdPrecioUno").value;
+    precio2 = document.getElementById("txtIdPrecioDos").value;
+    precio3 = document.getElementById("txtIdPrecioTres").value;
 
-    sumaTotal = precio1 + precio2 + precio3;
+    //transformamos el strings a entero
+    precio1 = parseFloat(precio1);
+    precio2 = parseFloat(precio2);
+    precio3 = parseFloat(precio3);
 
-    // la opcion del ${} sirve pero hay que enteder los fundamentos  pero en la cursada solicitan la otra opcion
-    //alert(`La suma total es ${SumaTotal}`);
-    
-    mensaje = "La suma total es " + sumaTotal;
+    //realizamos la suma de los datos ingreasados
+    resultado = precio1 + precio2 + precio3 ;
+
+    //creamos el mensaje para que el usuario lo visualice
+    mensaje = ("La suma es " + resultado);
+
+    //muestro la informacion
     alert(mensaje);
-	
 }
+
 function Promedio () 
-{
-    let precio1;
-    let precio2;
-    let precio3;
-    let promedio;
-    let mensaje;
+{   
+    //asigno las variables
+   let precio1;
+   let precio2;
+   let precio3;
+   let resultado;
+   let mensaje;
 
-    precio1 = parseFloat(document.getElementById("txtIdPrecioUno").value);
-    precio2 = parseFloat(document.getElementById("txtIdPrecioDos").value);
-    precio3 = parseFloat(document.getElementById("txtIdPrecioTres").value);
+    //tomamos el dato que ingrese el usuario
+    precio1 = document.getElementById("txtIdPrecioUno").value;
+    precio2 = document.getElementById("txtIdPrecioDos").value;
+    precio3 = document.getElementById("txtIdPrecioTres").value;
 
-    promedio = (precio1 + precio2 + precio3)/3;
+    //transformamos el strings a entero
+    precio1 = parseFloat(precio1);
+    precio2 = parseFloat(precio2);
+    precio3 = parseFloat(precio3);
 
-    // la opcion del ${} sirve pero hay que enteder los fundamentos  pero en la cursada solicitan la otra opcion
-    //alert(`El promedio es ${promedio} `);
+    //realizamos la suma de los datos ingreasados
+    resultado = (precio1 + precio2 + precio3)/3 ;
 
-    mensaje = "El promedio es " + promedio;
+    //creamos el mensaje para que el usuario lo visualice
+    mensaje = ("El promedio es " + resultado);
+
+    //muestro la informacion
     alert(mensaje);
 	
 }
 function PrecioFinal () 
 {
+    //asigno las variables
     let precio1;
     let precio2;
     let precio3;
-    let total;
-    let totalConIva;
+    let sumaDePrecios;
+    let precioConIva;
+    let precioFinal;
     let mensaje;
 
-    precio1 = parseFloat(document.getElementById("txtIdPrecioUno").value);
-    precio2 = parseFloat(document.getElementById("txtIdPrecioDos").value);
-    precio3 = parseFloat(document.getElementById("txtIdPrecioTres").value);
+    //tomamos el dato que ingrese el usuario
+    precio1 = document.getElementById("txtIdPrecioUno").value;
+    precio2 = document.getElementById("txtIdPrecioDos").value;
+    precio3 = document.getElementById("txtIdPrecioTres").value;
 
-    total= (precio1 + precio2 + precio3);
+    //transformamos el strings a entero
+    precio1 = parseFloat(precio1);
+    precio2 = parseFloat(precio2);
+    precio3 = parseFloat(precio3);
+
+    //realizamos la suma de los datos ingreasados
+    sumaDePrecios = precio1 + precio2 + precio3 ;
+
+    //Calculamos solo el valor del precio del Iva
+    precioConIva = (sumaDePrecios*21)/100;
+
+    //El valor final
+    precioFinal = sumaDePrecios + precioConIva;
     
-    totalConIva = total + (total*21)/100;
+    //creamos el mensaje para que el usuario lo visualice
+    mensaje = ("La suma es " + precioFinal);
 
-    // la opcion del ${} sirve pero hay que enteder los fundamentos  pero en la cursada solicitan la otra opcion
-    //alert(`El resultado es ${totalConIva} `);
-
-    mensaje = "El precio final es " + totalConIva;
+    //muestro la informacion
     alert(mensaje);
 	
 }
