@@ -7,8 +7,9 @@ function mostrarAumento()
 {	
 	//asignamos las variables
 	let importe;
-	let descuento;
-	let resultado;
+	let descuentoIngresado;
+	let descuentoImporte;
+	let importeTotal;
 
 	//tomamos el dato que el usuario ingresa
 	importe = document.getElementById("txtIdImporte").value;
@@ -17,14 +18,17 @@ function mostrarAumento()
 	importe = parseInt(importe);
 	
 	//recuadro para que el usuario ingrese un dato por el descuento
-	descuento = prompt ("Escriba el porcentaje de descuento que desea");
+	descuentoIngresado = prompt ("Escriba el porcentaje de descuento que desea");
 
 	//transformo el strings a un entero
-	descuento = parseInt(descuento);
+	descuentoIngresado = parseInt(descuentoIngresado);
+
+	//calculamos el descuento
+	descuentoImporte = (importe*descuentoIngresado)/100;
 
 	//calculo del importe inicial mas el descuento
-	resultado = importe - (importe*descuento)/100;
+	importeTotal = importe - descuentoImporte;
 
 	//mostramos la informacion por ID
-	document.getElementById("txtIdResultado").value = resultado;
+	document.getElementById("txtIdResultado").value = importeTotal;
 }
