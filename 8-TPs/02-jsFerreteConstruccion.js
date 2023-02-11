@@ -20,8 +20,8 @@ function Rectangulo ()
     largoAlambre = parseInt(largoAlambre);
     anchoTerreno = parseInt(anchoTerreno);
 
-    //calculo la  base * altura para obertener el rectangulo
-    rectanguloAlambre = largoAlambre * anchoTerreno;
+    //calculo la  base*2 + altura*2 para obertener el rectangulo
+    rectanguloAlambre = largoAlambre*2 + anchoTerreno*2;
 
     mensaje = "La cantadidad de alambre que debera comprar es: " + rectanguloAlambre ;
 

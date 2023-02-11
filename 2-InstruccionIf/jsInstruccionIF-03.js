@@ -1,58 +1,24 @@
-// NOMBRE: AGUSTIN MATIAS GARCIA NAVAS
+//nombre: Agustin garcia navas
+/* Al ingresar una edad debemos informar si la persona es mayor de edad, sino informar que es un menor de edad. */
 
-/* Aspectos a evaluar:
-Uso correcto de métodos de entrada y salida de datos (alert, prompt, document.getElementById)
-Uso correcto de variables y sus identificadores (nombres de variables)
-Concatenación
-Uso de parseInt / parseFloat
-Cálculo de porcentajes
-
-Se ingresará por id el valor de una compra de productos para el hogar. Se deberá agregar el iva (21%) y  luego se deberá restar el 5% en concepto de compra mayorista. El programa deberá mostrar por alert importe bruto, el iva, el importe con iva, el valor del descuento y el total a pagar. */
-
-function mostrar()
+function mostrar() 
 {
-	var valorCompra;
-	var iva;
-	var descuento;
-	var importeDelIva;
-	var importeConIva;
-	var importeConDescuento;
-	//var importeBruto;
-	var totalPagar;
-	var mensaje;
-	
+	var edad;
 
-	//valores de porcentaje, compra mayorista -5% 
-	iva = 21;
-	descuento = 5;
+	edad = document.getElementById("txtIdEdad").value;
 
-	valorCompra = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
 
-	valorCompra = parseFloat(valorCompra);
+	//edad es mayor a 18
+	if( edad >= 18)
+	{
+		alert("Es mayor de edad");
+	}
+	else 
+	{
+		alert("Es menor de edad");
+	}
 
-	//valor del iva en la compra
-	importeDelIva = (valorCompra * iva)/100;
-
-	//valor del descuento
-	valorDescuento = (valorCompra * descuento)/100;
-
-	//importe con el IVA
-	importeConIva = valorCompra + importeDelIva;
-
-	//importe de la compra mas el descuento
-	importeConDescuento = valorCompra - valorDescuento ;
-
-	importeBruto = valorCompra + importeConIva ;
-
-	totalPagar = valorCompra + importeDelIva - valorDescuento;
-	
-	mensaje = "El importe en bruto es: " + importeBruto + "\r El valor del IVA es: " + importeDelIva + "\r El importe con IVA es: " + importeConIva + "\r El valor del descuento es: " + valorDescuento + "\r El total a pagar es: " + totalPagar ;
-
-	alert (mensaje);
-
-
-
-	
 
 
 
