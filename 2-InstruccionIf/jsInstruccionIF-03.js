@@ -3,23 +3,24 @@
 
 function mostrar() 
 {
-	var edad;
+	var clave = "utn750";
 
-	edad = document.getElementById("txtIdEdad").value;
+	clave = prompt("Ingrese la clave");
 
-	edad = parseInt(edad);
-
-	//edad es mayor a 18
-	if( edad >= 18)
+	while(clave != "utn750")
 	{
-		alert("Es mayor de edad");
-	}
-	else 
-	{
-		alert("Es menor de edad");
+		clave = prompt("Error, ingrese nuevamente");
+
+		if(clave == "utn750")
+		{
+			mensaje = "Ingreso correctamente la clave";
+
+			break;
+		}
 	}
 
-
+	alert(mensaje);
+	
 
 
 }

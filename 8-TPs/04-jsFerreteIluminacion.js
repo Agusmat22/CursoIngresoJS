@@ -36,67 +36,71 @@ function CalcularPrecio()
     //pasamos el strings a un entero
     cantidadLamparas = parseInt(cantidadLamparas);
 
-    if (marcaLampara == "ArgentinaLuz") //Solamente si esta condicion se cumple "ArgentinaLuz" ingresa a las cantidades de lamparas del mismo
-    {
-        if(cantidadLamparas == 5) // 
-        {
-            descuento = 40;
-        }
-        else
-        {
-            if(cantidadLamparas == 4)
+    
+    switch(cantidadLamparas)
+    {   
+        case 5:
+            switch(marcaLampara)
             {
-                descuento = 25;
+                case "ArgentinaLuz":
+                    descuento = 40;
+                break;
+
+                default: 
+                    descuento = 30;
+                break;
             }
-            else
+        break;
+
+        case 4:
+            switch(marcaLampara)
             {
-                if(cantidadLamparas == 3)
-                {
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    descuento = 25;
+                break;
+
+                default:
+                    descuento = 20;
+                break;
+            }
+        break;
+
+        case 3:
+            switch(marcaLampara)
+            {
+                case "ArgentinaLuz":
                     descuento = 15;
-                }                             
-            }
-        }
+                break;
 
-    }
-    else 
-    {
-        if(marcaLampara == "FelipeLamparas") //Solamente si esta condicion se cumple "FelipeLamparas" ingresa a las cantidades de lamparas del mismo
-        {
-            if(cantidadLamparas == 4)
-            {
-                descuento = 25;
-            }
-            else
-            {
-                if(cantidadLamparas == 3)
-                {
+                case "FelipeLamparas":
                     descuento = 10;
-                }
-            }
-        }
-        else // en este "else" no se encuentra ni FelipeLamparas ni ArgentinaLuz, por ende se calcula todas las otras marcas
-        {
-            if(cantidadLamparas == 5)
-            {
-                descuento= 30;
-            }
-            else
-            {
-                if(cantidadLamparas == 4)
-                {
-                    descuento= 20;
-                }
-                else
-                {
-                    if(cantidadLamparas == 3)
-                    {
-                        descuento = 5;
-                    }
-                }
-            }
+                break;
 
-        }
+                default:
+                    descuento = 5;
+                break;
+            }
+        break;
+
+        case 2:
+        case 1:
+        break;
+        
+        // pongo el descuento al 60 ya que si compra 6 o mas se realiza, lo que hice fue plantea caso por caso y dejar para lo ultimo el infinito
+        default:
+            descuento = 60;
+        break;
+
     }
+
+
+
+
+
+
+
+
 
     //este calculo sirve para todas las cantidades que esten fuera de las condiciones se calculen igualmente sin descuento
     valorSinDescuento = cantidadLamparas * VALOR_LAMPARAS ;   
@@ -114,14 +118,14 @@ function CalcularPrecio()
 
         precioConImpuesto = precioFinal + precioDelImpuesto;
 
-        alert("IIBB Usted pago $" + precioDelImpuesto + " siendo $" + precioConImpuesto +" el impuesto que se pagó");
+        alert("IIBB Usted pago $" + precioDelImpuesto + " siendo $" + precioConImpuesto +" el precio final");
     }
 
     document.getElementById("txtIdprecioDescuento").value = precioFinal;
     
 }
 
-
+// LIN DE MI CODIGO ARRANCANDO POR LA MARCA Y LUEGO LA CANTIDAD DE LAMPARAS = https://onlinegdb.com/GzIXjV1QL
 // LINK DE MI CODIGO SOLAMENTE CON IF SIN OPERADORES LOGICOS = https://onlinegdb.com/arCLKQW24 
 // LINK DE MI CODIGO CON IF Y OPERADORES LOGICOS = https://onlinegdb.com/H9lZlLXiE
 
